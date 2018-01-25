@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- 注意：struts里面配置了action，但没有具体的action类的时候tomcat是启动不了的 -->
+<struts>
+	<!-- struts的常量,会覆盖default.properties中的常量值 -->
+	<!--开发模式,debug不需要重启服务器  -->
+	<constant name="struts.devMode" value="true"></constant>
+	<!--解决中文乱码   编码 internationalization-->
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<!-- action的访问扩展名 -->
+	<constant name="struts.action.extension" value="action,do,html,,"></constant>
+	<!-- 开启动态方法访问 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	
+	
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="index" class="action.showUserAction">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="tags" class="action.TagsAction">
+			<result>/tags.jsp</result>
+		</action>
+		
+		
+		
+		
+	</package>
+</struts>
